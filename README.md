@@ -13,3 +13,15 @@
 - Compiler : Python last version
 - Text Editor : VSCode last version
 - Web Browser : Google Chrome last version
+
+## How to run program code
+- Clone this repository https://github.com/kusin/dashboard-video-games
+- Run my code with command "streamlit run main.py"
+
+# How to create and activate virtual environment on linux mint
+- sudo apt-get install python3
+- sudo apt-get install python3-pip
+- sudo apt-get install python3-virtualenv
+- virtualenv env
+- source env/bin/activate
+- done
