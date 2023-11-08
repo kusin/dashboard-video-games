@@ -18,7 +18,7 @@
 - Clone this repository https://github.com/kusin/dashboard-video-games
 - Run my code with command "streamlit run main.py"
 
-# How to create and activate virtual environment on linux mint
+# How to create and activate virtual environment
 Installing software 
 - sudo apt-get install python3
 - sudo apt-get install python3-pip
