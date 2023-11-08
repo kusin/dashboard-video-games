@@ -23,8 +23,10 @@ Installing software
 - sudo apt-get install python3
 - sudo apt-get install python3-pip
 - sudo apt-get install python3-virtualenv
+
 create virtual environment
 - virtualenv env
+
 activate virtual environment
 - source env/bin/activate
 - done
