@@ -19,9 +19,12 @@
 - Run my code with command "streamlit run main.py"
 
 # How to create and activate virtual environment on linux mint
+Installing software 
 - sudo apt-get install python3
 - sudo apt-get install python3-pip
 - sudo apt-get install python3-virtualenv
+create virtual environment
 - virtualenv env
+activate virtual environment
 - source env/bin/activate
 - done
