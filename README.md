@@ -19,12 +19,14 @@
 - Run my code with command "streamlit run main.py"
 
 # How to create and activate virtual environment
-1. installing software 
+Installing software 
 - sudo apt-get install python3
 - sudo apt-get install python3-pip
 - sudo apt-get install python3-virtualenv
-2.create virtual environment
+
+Create virtual environment
 - virtualenv env
-3. activate virtual environment
+
+Activate virtual environment
 - source env/bin/activate
 - done
