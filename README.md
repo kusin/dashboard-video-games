@@ -14,6 +14,12 @@
 - Text Editor : VSCode last version
 - Web Browser : Google Chrome last version
 
+## List of libraries used
+- Pandas
+- Numpy
+- Plotly
+- Streamlit
+
 ## How to run program code
 - Clone this repository https://github.com/kusin/dashboard-video-games
 - Run my code with command "streamlit run main.py"
