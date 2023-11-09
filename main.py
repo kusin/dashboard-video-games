@@ -17,3 +17,4 @@ st.set_page_config(
 with st.container():
 	st.markdown("## Visualization Data of Video Games Sales with Exploratory Data Analysis ")
 	st.markdown("- Created By. Aryajaya Alamsyah, Nov 2023")
+	
