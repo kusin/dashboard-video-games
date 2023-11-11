@@ -23,4 +23,5 @@ class exploratory:
         sum_eu = np.round(df["EU_Sales"].sum(), 2)
         sum_jp = np.round(df["JP_Sales"].sum(), 2)
         sum_ot = np.round(df["Other_Sales"].sum(), 2)
-        return sum_na, sum_eu, sum_jp, sum_ot
+        sum_global = np.round(df["Global_Sales"].sum(),2)
+        return sum_na, sum_eu, sum_jp, sum_ot, sum_global
