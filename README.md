@@ -1,5 +1,6 @@
 ## Web design for data visualization using python streamlit
 - By Aryajaya Alamsyah, M.Kom
+- https://dashboard-video-games-uin-jakarta.streamlit.app/
 
 ## Hardware Specifications for Web Development
 - Laptop HP Probook 440 G6
