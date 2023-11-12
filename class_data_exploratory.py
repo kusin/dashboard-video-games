@@ -27,7 +27,13 @@ class exploratory:
         return sum_na, sum_eu, sum_jp, sum_ot, sum_global
     
     def get_sum_of_sales_by_region(self):
-        df = self.get_dataset()    
+        df = self.get_dataset()
         df = df[['NA_Sales', 'EU_Sales', 'JP_Sales', 'Other_Sales', 'Global_Sales']].sum().sort_values(ascending=False).reset_index()
         df.columns = ["Region", "Sales"]
+        return df
+    
+    def get_sum_of_sales_by_year(self):
+        df = self.get_dataset()
+        df = df.groupby(by=['Year'])['Global_Sales'].sum().reset_index()
+        df.sort_values(by="Year")
         return df
