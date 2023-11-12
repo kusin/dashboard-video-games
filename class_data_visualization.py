@@ -68,30 +68,26 @@ class visualization:
         return fig
     
     def line_plot(df, indexs, columns):
-        # fig = px.line(
-        #     df, x=indexs, y=columns, title='Time Series Plot of Total Global Sales by Region'
-        # )
-        # return fig
-
         # create a plot
         fig = go.Figure()
         
         # add lineplot with graph object
         fig.add_trace(
-            go.Bar(
-                x=df[indexs],y=df[columns], name=columns, width=0.75
+            go.Scatter(
+                x=df[indexs],y=df[columns], mode='lines',
             )
         )
 
         # update traces lineplot
         fig.update_traces(
-            marker_color = px.colors.diverging.RdYlBu
+            line_color="#67001f",
+            line_width=2.5
         )
         
         # update layout lineplot
         fig.update_layout(
-            title = "Sales Video Games by Region",
-            xaxis_title = "Region Sales",
+            title = "Historical of sales video games by all region",
+            xaxis_title = "Year Sales",
             yaxis_title = "Sum of Sales",
         )
 
