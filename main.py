@@ -40,15 +40,6 @@ with st.container():
     # labels resume-sales
     st.error("Sum of video games sales from all regions")
     
-    # metric sum sales from all regions
-    sum_na, sum_eu, sum_jp, sum_ot, sum_global = exploratory().get_sum_of_video_games_sales()
-    col1, col2, col3, col4, col5 = st.columns(5, gap="medium")
-    col1.metric(label="North America (NA)",value=str(sum_na) + " M")
-    col2.metric(label="Europe (EU)",value=str(sum_eu) + " M")
-    col3.metric(label="Japan (JP)",value=str(sum_jp) + " M") 
-    col4.metric(label="Other regions",value=str(sum_ot) + " M")
-    col5.metric(label="Global",value=str(sum_global) + " M")
-    
     # visualization sum of sales by year
     df = exploratory().get_sum_of_sales_by_year()
     st.plotly_chart(visualization.line_plot(df, "Year", "Global_Sales"), use_container_width=True)
@@ -93,9 +84,19 @@ with st.container():
     # labels resume-sales
     st.error("Best gendre of video games sales")
 
+    
+
     # visualization of Best gendre of video games sales
     col1, col2 = st.columns([1,1], gap="medium")
     with col1:
+        df = exploratory().get_best_genre()
+        st.dataframe(df)
+        st.plotly_chart(
+            px.bar(
+                df, x="Genre", y=["NA_Sales", "EU_Sales", "JP_Sales", "Other_Sales"], barmode='group'
+            )    
+        )
+        
         st.text("Top five best gendre by Sales of all region")
     with col2:
         st.text("Top five best gendre by group region")
