@@ -29,7 +29,22 @@ class exploratory:
         df.columns = ["Region", "Sales"]
         return df
     
+    def get_best_game(self):
+        df = self.get_dataset()
+        df = df.groupby("Name")[["NA_Sales", "EU_Sales", "JP_Sales", "Other_Sales", "Global_Sales"]].sum().sort_values(by=['Global_Sales'],ascending=[False]).head(5).reset_index()
+        return df
+    
+    def get_best_platform(self):
+        df = self.get_dataset()
+        df = df.groupby("Platform")[["NA_Sales", "EU_Sales", "JP_Sales", "Other_Sales", "Global_Sales"]].sum().sort_values(by=['Global_Sales'],ascending=[False]).head(5).reset_index()
+        return df
+    
     def get_best_genre(self):
         df = self.get_dataset()
         df = df.groupby("Genre")[["NA_Sales", "EU_Sales", "JP_Sales", "Other_Sales", "Global_Sales"]].sum().sort_values(by=['Global_Sales'],ascending=[False]).head(5).reset_index()
+        return df
+    
+    def get_best_publisher(self):
+        df = self.get_dataset()
+        df = df.groupby("Publisher")[["NA_Sales", "EU_Sales", "JP_Sales", "Other_Sales", "Global_Sales"]].sum().sort_values(by=['Global_Sales'],ascending=[False]).head(5).reset_index()
         return df

@@ -41,14 +41,14 @@ class visualization:
 
         return fig
     
-    def bar_plot(df, indexs, columns):
+    def bar_plot(df, indexs, columns, title, x_title, y_title):
         # create a plot
         fig = go.Figure()
         
         # add barplot with graph object
         fig.add_trace(
             go.Bar(
-                x=df[indexs],y=df[columns], name=columns, width=0.75
+                x=df[indexs],y=df[columns], name=columns, width=0.5
             )
         )
 
@@ -59,9 +59,9 @@ class visualization:
         
         # update layout barplot
         fig.update_layout(
-            title = "Sales Video Games by Region",
-            xaxis_title = "Region Sales",
-            yaxis_title = "Sum of Sales",
+            title = title,
+            xaxis_title = x_title,
+            yaxis_title = y_title,
         )
 
         # return values

@@ -13,5 +13,5 @@ class dataset:
     # method read dataset
     @staticmethod
     def get_dataset():
-        df = pd.read_csv("dataset/vgsales_not_smoothing.csv")
+        df = pd.read_csv("dataset/vgsales_after_smoothing.csv")
         return df
