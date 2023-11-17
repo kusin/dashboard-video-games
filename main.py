@@ -33,7 +33,7 @@ st.set_page_config(
 with st.container():
     st.markdown("## Visualization Data of Video Games Sales with Exploratory Data Analysis ")
     st.markdown("- Created By. Aryajaya Alamsyah, Nov 2023 (link download on https://www.kaggle.com/datasets/gregorut/videogamesales)")
-    st.dataframe(dataset().get_dataset(),use_container_width=True)
+    # st.dataframe(dataset().get_dataset(),use_container_width=True)
 
 # container-resume-sales
 with st.container():
