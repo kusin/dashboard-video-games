@@ -48,13 +48,13 @@ class visualization:
         # add barplot with graph object
         fig.add_trace(
             go.Bar(
-                x=df[indexs],y=df[columns], name=columns, width=0.5
+                x=df[indexs],y=df[columns], name=columns, width=0.5, 
             )
         )
 
         # update traces barplot
         fig.update_traces(
-            marker_color = px.colors.diverging.RdYlBu
+            marker_color = px.colors.diverging.RdYlBu,
         )
         
         # update layout barplot
@@ -62,9 +62,46 @@ class visualization:
             title = title,
             xaxis_title = x_title,
             yaxis_title = y_title,
+            xaxis=dict(tickangle=0),
+            yaxis=dict(tickangle=0),
         )
 
         # return values
+        return fig
+    
+    def groupbar_plot(df, indexs, columns, title, x_title, y_title):
+        # create a plot
+        fig = go.Figure()
+
+        # add groupbar with graph object
+        for column in columns:
+            fig.add_trace(
+                go.Bar(
+                    x = df[indexs],
+                    y = df[column],
+                    name=column.split('_')[0] + ' Sales',
+                )
+            )
+        
+        colors = {
+            'NA_Sales': 'rgb(165,0,38)', 
+            'EU_Sales': 'rgb(215,48,39)', 
+            'JP_Sales': 'rgb(244,109,67)', 
+            'Other_Sales': 'rgb(253,174,97)'
+        }
+        for i, col in enumerate(['NA_Sales', 'EU_Sales', 'JP_Sales', 'Other_Sales']):
+            fig.update_traces(marker_color=colors[col], selector=dict(name=col), name=f'{col.split("_")[0]} Sales')
+        
+        # update layout barplot
+        fig.update_layout(
+            title = title,
+            xaxis_title = x_title,
+            yaxis_title = y_title,
+            xaxis=dict(tickangle=0),
+            yaxis=dict(tickangle=0),
+        )
+
+        # return valuess
         return fig
     
     def line_plot(df, indexs, columns):
