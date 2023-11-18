@@ -70,8 +70,7 @@ with st.container():
     
     # load top 5 best game name
     df = exploratory().get_best_game()
-    st.dataframe(df)
-
+    
     # visualization of Best game-name of video games sales
     col1, col2 = st.columns(2, gap="medium")
     with col1:
@@ -92,57 +91,66 @@ with st.container():
     # labels resume-sales
     st.error("Best platform of video games sales")
 
+    # load best platform name
     df = exploratory().get_best_platform()
-    st.markdown("- Best 5 platform based on Global Sales")
-    st.dataframe(df)
-
+    
     # visualization of Best platform of video games sales
     col1, col2 = st.columns(2, gap="medium")
     with col1:
+        st.plotly_chart(
+            visualization.groupbar_plot(
+                df, "Platform", ["NA_Sales","EU_Sales","JP_Sales","Other_Sales"], "Best top 5 Platform based on Global Sales", "Platform Name", "Sum of Global Sales"
+            ),use_container_width=True
+        )
+    with col2:
         st.plotly_chart(
             visualization.bar_plot(
                 df, "Platform", "Global_Sales", "Best top 5 Platform based on Global Sales", "Platform Name", "Sum of Global Sales"
             ),use_container_width=True
         )
-    with col2:
-        st.text("Top five best platform by group region")
 
 # container-gendre
 with st.container():
     # labels resume-sales
     st.error("Best gendre of video games sales")
 
+    # load best genre name
     df = exploratory().get_best_genre()
-    st.markdown("- Best 5 genre based on Global Sales")
-    st.dataframe(df)
-
+    
     # visualization of Best gendre of video games sales
     col1, col2 = st.columns(2, gap="medium")
     with col1:
+        st.plotly_chart(
+            visualization.groupbar_plot(
+                df, "Genre", ["NA_Sales","EU_Sales","JP_Sales","Other_Sales"], "Best top 5 Genre based on Global Sales", "Genre Name", "Sum of Global Sales"
+            ),use_container_width=True
+        )
+    with col2:
         st.plotly_chart(
             visualization.bar_plot(
                 df, "Genre", "Global_Sales", "Best top 5 Genre based on Global Sales", "Genre Name", "Sum of Global Sales"
             ),use_container_width=True
         )
-    with col2:
-        st.text("Top five best gendre by group region")
 
 # container-publisher
 with st.container():
     # labels resume-sales
     st.error("Best publisher of video games sales")
     
+    # load best publisher
     df = exploratory().get_best_publisher()
-    st.markdown("- Best 5 publisher based on Global Sales")
-    st.dataframe(df)
-
+    
     # visualization of Best publisher of video games sales
     col1, col2 = st.columns([1,1], gap="medium")
     with col1:
+        st.plotly_chart(
+            visualization.groupbar_plot(
+                df, "Publisher", ["NA_Sales","EU_Sales","JP_Sales","Other_Sales"], "Best top 5 Publisher based on Global Sales", "Publisher Name", "Sum of Global Sales"
+            ),use_container_width=True
+        )
+    with col2:
         st.plotly_chart(
             visualization.bar_plot(
                 df, "Publisher", "Global_Sales", "Best top 5 Publisher based on Global Sales", "Publisher Name", "Sum of Global Sales"
             ),use_container_width=True
         )
-    with col2:
-        st.text("Top five best publisher by group region")

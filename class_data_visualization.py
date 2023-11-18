@@ -71,18 +71,8 @@ class visualization:
     
     def groupbar_plot(df, indexs, columns, title, x_title, y_title):
         # create a plot
-        fig = go.Figure()
+        fig = px.bar(df, x=indexs, y=['NA_Sales', 'EU_Sales', 'JP_Sales', 'Other_Sales'], barmode='group')
 
-        # add groupbar with graph object
-        for column in columns:
-            fig.add_trace(
-                go.Bar(
-                    x = df[indexs],
-                    y = df[column],
-                    name=column.split('_')[0] + ' Sales',
-                )
-            )
-        
         colors = {
             'NA_Sales': 'rgb(165,0,38)', 
             'EU_Sales': 'rgb(215,48,39)', 
@@ -99,6 +89,7 @@ class visualization:
             yaxis_title = y_title,
             xaxis=dict(tickangle=0),
             yaxis=dict(tickangle=0),
+            legend=dict(title='', orientation='h', yanchor='top', y=1.05, xanchor='center', x=0.5),
         )
 
         # return valuess
