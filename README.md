@@ -1,5 +1,4 @@
 ## Web design for data visualization using python streamlit
-- By Aryajaya Alamsyah
 - https://dashboard-video-games-v2.streamlit.app/
 
 ## Hardware Specifications for Web Development
